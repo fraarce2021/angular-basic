@@ -1,0 +1,22 @@
+<ul>
+    <li *ngFor="let hero of heroes; let i = index">
+        {{i+1}}-{{hero}}
+    </li>
+</ul>
+
+<button (click)="deleteHero()">
+  Delete Last Hero
+</button>
+
+<h1 *ngIf="erasedHeroes.length > 0; else notErased">Erased Heroes</h1>
+
+<ng-template #notErased>
+    <h1>Heroes not erased</h1>
+</ng-template>
+
+
+<ul>
+    <li *ngFor="let heroErased of erasedHeroes; let i = index">
+        {{i+1}}-{{heroErased}}
+    </li>
+</ul>
